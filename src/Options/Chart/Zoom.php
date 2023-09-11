@@ -20,5 +20,5 @@ class zoom
 
     public ZoomedArea $zoomedArea;
 
-    
+
 }

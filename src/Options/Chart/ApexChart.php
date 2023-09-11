@@ -37,6 +37,10 @@ class ApexChart
     public float $parentHeightOffset;
     public bool $redrawOnParentResize;
     public string $redrawOnWindowResize;
+    /**
+     *
+     * @var Sparkline
+     */
     public Sparkline $sparkline;
 
     public bool $stacked;
@@ -51,5 +55,10 @@ class ApexChart
 
     public Zoom $zoom;
 
+
+    public function toArray()
+    {
+
+    }
 
 }
