@@ -3,16 +3,20 @@
 namespace DApexchartsJs\Options\Chart;
 
 
-class ApexChart
+use DApexchartsJs\helper\Options;
+
+class ApexChart extends Options
 {
 
     public string $width;
+
     public string $height;
+
     /**
      * @type Type
      * @var string
      */
-    private string $type;
+    public Type $type;
 
     public string $foreColor;
     public string $fontFamily;
@@ -41,24 +45,98 @@ class ApexChart
      *
      * @var Sparkline
      */
-    public Sparkline $sparkline;
+    protected Sparkline $sparkline;
 
     public bool $stacked;
+
     /**
      * @type StackType
      * @var string
      */
-    public string $stackType;
+    protected string $stackType;
 
-    public Toolbar $toolbar;
+    /**
+     * 定义枚举类
+     * @var string
+     */
+    static $stackType_ENMU = StackType::class;
 
 
-    public Zoom $zoom;
+    protected Toolbar $toolbar;
 
 
-    public function toArray()
+    protected Zoom $zoom;
+
+
+    /**
+     * @return Sparkline
+     */
+    public function getSparkline(): Sparkline
     {
-
+        if (!isset($this->sparkline)) {
+            $this->sparkline = new Sparkline();
+        }
+//        dump($this->sparkline);
+        return $this->sparkline;
     }
 
+    /**
+     * @return ApexDropShadow
+     */
+    public function getDropShadow(): ApexDropShadow
+    {
+        if (!isset($this->dropShadow)) {
+            $this->dropShadow = new ApexDropShadow();
+        }
+        return $this->dropShadow;
+    }
+
+    /**
+     * @return Brush
+     */
+    public function getBrush(): Brush
+    {
+        if (!isset($this->brush)) {
+            $this->brush = new Brush();
+        }
+        return $this->brush;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStackType(): string
+    {
+        return $this->stackType;
+    }
+
+    /**
+     * @param string $stackType
+     */
+    public function setStackType( $stackType): void
+    {
+        if (!StackType::isValid($stackType)) {
+            throw new \Exception(" stackType not in list");
+        }
+
+        $this->stackType = $stackType;
+    }
+
+
+    /**
+     * 设置类型
+     * @param string $type
+     */
+    public function setType( $type): void
+    {
+        dump($type);
+        if (!Type::isValidKey($type)) {
+            throw new \Exception("type not in list");
+        }
+
+        $this->type = $type;
+    }
+
+
 }
+

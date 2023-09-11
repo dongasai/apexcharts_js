@@ -2,7 +2,9 @@
 
 namespace DApexchartsJs\Options\Chart;
 
-class Sparkline
+use DApexchartsJs\helper\Options;
+
+class Sparkline extends Options
 {
     public bool $enabled;
 }

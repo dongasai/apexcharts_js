@@ -2,12 +2,13 @@
 
 namespace DApexchartsJs\Options\Chart;
 
-use DApexchartsJs\helper\EnmuCalss;
+use MyCLabs\Enum\Enum;
 
-class StackType extends EnmuCalss
+class StackType extends Enum
 {
 
-    static $list =[
-        'normal' , '100%'
-    ];
+    private const normal = 'normal';
+    private const b100 = '100%';
+
+
 }
