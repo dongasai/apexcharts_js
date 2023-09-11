@@ -1,0 +1,17 @@
+{
+    "name": "dongasai/apexcharts_js",
+    "description": "apexcharts 图表的相关操作",
+    "autoload": {
+        "psr-4": {
+            "DApexchartsJs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dongasai",
+            "email": "1514582970@qq.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {}
+}
