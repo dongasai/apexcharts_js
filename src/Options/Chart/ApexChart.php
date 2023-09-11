@@ -2,7 +2,6 @@
 
 namespace DApexchartsJs\Options\Chart;
 
-use DApexchartsJs\Options\Chart\Type;
 
 class ApexChart
 {
@@ -50,7 +49,7 @@ class ApexChart
     public Toolbar $toolbar;
 
 
-    public zoom $zoom;
+    public Zoom $zoom;
 
 
 }
